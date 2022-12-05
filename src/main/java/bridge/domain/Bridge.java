@@ -1,6 +1,7 @@
 package bridge.domain;
 
 import bridge.domain.dto.Moving;
+import bridge.domain.dto.MovingResult;
 import java.util.List;
 
 public class Bridge {
@@ -12,9 +13,13 @@ public class Bridge {
         this.bridgeLocation = bridgeLocation;
     }
 
-    public boolean isCorrect(Moving moving) {
-        String userMoving = moving.getMoving();
-        return userMoving.equals(getDirection(bridge));
+    public MovingResult getMovingResult(Moving moving) {
+        String direction = moving.getMoving();
+        return new MovingResult(direction, isCorrect(direction));
+    }
+
+    private boolean isCorrect(String direction) {
+        return getDirection(bridge).equals(direction);
     }
 
     private String getDirection(List<String> bridge) {
