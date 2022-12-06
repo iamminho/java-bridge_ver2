@@ -3,6 +3,7 @@ package bridge.domain;
 import java.util.List;
 
 public class BridgeLocation {
+    private final int RESET_LOCATION_NUMBER = -1;
     private int location;
 
     public BridgeLocation(int startLocation) {
@@ -18,6 +19,6 @@ public class BridgeLocation {
     }
 
     public void resetLocation() {
-        this.location = 0;
+        this.location = RESET_LOCATION_NUMBER;
     }
 }
