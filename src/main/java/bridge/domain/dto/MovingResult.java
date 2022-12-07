@@ -1,11 +1,11 @@
 package bridge.domain.dto;
 
 public class MovingResult {
-    public String direction;
-    public boolean result;
+    private String direction;
+    private boolean result;
 
-    public MovingResult(String direction, boolean result) {
-        this.direction = direction;
+    public MovingResult(Moving moving, boolean result) {
+        this.direction = moving.getMoving();
         this.result = result;
     }
 

@@ -30,8 +30,7 @@ public class Bridge {
     }
 
     public MovingResult getMovingResult(Moving moving) {
-        String direction = moving.getMoving();
-        return new MovingResult(direction, isCorrect(direction));
+        return new MovingResult(moving, isCorrect(moving.getMoving()));
     }
 
     private boolean isCorrect(String direction) {
