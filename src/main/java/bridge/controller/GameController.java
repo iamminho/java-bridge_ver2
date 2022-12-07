@@ -71,7 +71,8 @@ public class GameController {
     private void retryOrQuit(BridgeMap bridgeMap) {
         GameCommand gameCommand = viewController.getGameCommand();
         String command = gameCommand.getCommand();
-        if (bridgeGame.retry(command)) {
+        if (bridgeGame.isRetry(command)) {
+            bridgeGame.retry();
             play();
             return;
         }
